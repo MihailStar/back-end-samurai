@@ -1,0 +1,250 @@
+{
+  "info": {
+    "_postman_id": "a0e4580b-5525-4780-ac7a-47efbe525843",
+    "name": "back-end-samurai-10",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "course",
+      "item": [
+        {
+          "name": "create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [""],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"created title\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{SERVER_HOST}}:{{SERVER_PORT}}/course",
+              "host": ["{{SERVER_HOST}}"],
+              "port": "{{SERVER_PORT}}",
+              "path": ["course"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "readAll",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [""],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{SERVER_HOST}}:{{SERVER_PORT}}/course?offset=0&limit=5",
+              "host": ["{{SERVER_HOST}}"],
+              "port": "{{SERVER_PORT}}",
+              "path": ["course"],
+              "query": [
+                {
+                  "key": "offset",
+                  "value": "0",
+                  "description": "optional"
+                },
+                {
+                  "key": "limit",
+                  "value": "5",
+                  "description": "optional"
+                },
+                {
+                  "key": "sort[title]",
+                  "value": "asc",
+                  "description": "optional",
+                  "disabled": true
+                },
+                {
+                  "key": "sort[title]",
+                  "value": "desc",
+                  "description": "optional",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "read",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [""],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{SERVER_HOST}}:{{SERVER_PORT}}/course/:courseId",
+              "host": ["{{SERVER_HOST}}"],
+              "port": "{{SERVER_PORT}}",
+              "path": ["course", ":courseId"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ],
+              "variable": [
+                {
+                  "key": "courseId",
+                  "value": "",
+                  "description": "required"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [""],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"updated title\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{SERVER_HOST}}:{{SERVER_PORT}}/course/:courseId",
+              "host": ["{{SERVER_HOST}}"],
+              "port": "{{SERVER_PORT}}",
+              "path": ["course", ":courseId"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ],
+              "variable": [
+                {
+                  "key": "courseId",
+                  "value": "",
+                  "description": "required"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [""],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{SERVER_HOST}}:{{SERVER_PORT}}/course/:courseId",
+              "host": ["{{SERVER_HOST}}"],
+              "port": "{{SERVER_PORT}}",
+              "path": ["course", ":courseId"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ],
+              "variable": [
+                {
+                  "key": "courseId",
+                  "value": "",
+                  "description": "required"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "SERVER_HOST",
+      "value": "http://localhost",
+      "type": "default"
+    },
+    {
+      "key": "SERVER_PORT",
+      "value": "3000",
+      "type": "default"
+    }
+  ]
+}
